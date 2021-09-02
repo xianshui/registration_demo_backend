@@ -89,6 +89,8 @@ func main() {
 
 	router := gin.Default()
 
+	router.StaticFS("/uploads", http.Dir("./uploads"))
+
 	router.Use(Cors())
 
 	router.GET("/", func(c *gin.Context) {
